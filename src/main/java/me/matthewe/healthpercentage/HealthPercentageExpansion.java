@@ -31,7 +31,7 @@ public class HealthPercentageExpansion extends PlaceholderExpansion {
             double hp = p.getHealth();
             double maxHP = p.getMaxHealth();
 
-            double percentage = (hp * 100.0) / maxHP;
+            double percentage = ((double)hp/(double) maxHP) *100.0;
             return String.valueOf((int) Math.floor(percentage));
         }
         return "-1";
