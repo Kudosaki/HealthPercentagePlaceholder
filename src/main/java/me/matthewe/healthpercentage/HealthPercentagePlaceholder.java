@@ -11,18 +11,7 @@ public final class HealthPercentagePlaceholder extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        PlaceholderAPI.registerPlaceholderHook("health_percentage", new PlaceholderHook() {
-            @Override
-            public String onPlaceholderRequest(Player p, String params) {
-
-                double hp = p.getHealth();
-                double maxHP = p.getMaxHealth();
-
-                double percentage = (hp * 100.0) / maxHP;
-                return String.valueOf((int) Math.floor(percentage));
-
-            }
-        }) ;
+        new HealthPercentageExpansion().register();
     }
 
     @Override
